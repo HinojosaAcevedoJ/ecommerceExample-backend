@@ -3,7 +3,9 @@ const {
   deleteById,
   createProduct,
   getAllProducts,
-  updateById
+  updateById,
+  getById,
+  getByCategory
 } = require('../controllers')
 
 const routes = new Router()
@@ -15,5 +17,9 @@ routes.get('/', getAllProducts)
 routes.put('/:id', updateById)
 
 routes.delete('/:id', deleteById)
+
+routes.get('/:id', getById)
+
+routes.get('/', getByCategory)
 
 module.exports = routes

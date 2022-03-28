@@ -4,6 +4,9 @@ const signup = require('./auth/signup')
 const login = require('./auth/login')
 const deleteById = require('./products/deleteById')
 const updateById = require('./products/updateById')
+const getById = require('./products/getById')
+const getByCategory = require('./products/getByCategory')
+const getCategories = require('./products/getCategories')
 
 module.exports = {
   createProduct,
@@ -11,5 +14,8 @@ module.exports = {
   signup,
   login,
   deleteById,
-  updateById
+  updateById,
+  getById,
+  getByCategory,
+  getCategories
 }

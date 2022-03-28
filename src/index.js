@@ -6,6 +6,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const products = require('./routes/products')
 const auth = require('./routes/auth')
+const categories = require('./routes/categories')
 
 const { URL_MONGODB } = process.env
 
@@ -23,6 +24,7 @@ mongoose
   .then(() => {
     app.use('/products', products)
     app.use('/auth', auth)
+    app.use('/categories', categories)
     app.listen(PORT, () => {
       console.log('El servidor está inicializado en el puerto 4000')
     })
