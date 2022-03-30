@@ -14,7 +14,6 @@ const { URL_MONGODB } = process.env
 const app = express()
 const PORT = process.env.PORT || 4000
 
-// middlewares
 app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
