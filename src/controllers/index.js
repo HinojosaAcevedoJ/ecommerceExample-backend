@@ -7,6 +7,9 @@ const updateById = require('./products/updateById')
 const getById = require('./products/getById')
 const getByCategory = require('./products/getByCategory')
 const getCategories = require('./products/getCategories')
+const createInvoice = require('./invoice/create')
+const getAllInvoice = require('./invoice/getAllInvoice')
+const getInvoiceById = require('./invoice/getInvoiceById')
 
 module.exports = {
   createProduct,
@@ -17,5 +20,8 @@ module.exports = {
   updateById,
   getById,
   getByCategory,
-  getCategories
+  getCategories,
+  createInvoice,
+  getAllInvoice,
+  getInvoiceById
 }
