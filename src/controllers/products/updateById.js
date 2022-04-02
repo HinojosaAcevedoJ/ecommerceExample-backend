@@ -13,7 +13,11 @@ const updateById = async (req, res) => {
   const payload = req.body
 
   const response = await Product.findByIdAndUpdate(ObjectId(id), payload)
-  console.log(response)
+  if (response) {
+    res.send(res.status(200).send({ message: 'producto actualizado' }))
+  } else {
+    res.send(res.status(404).send({ message: 'producto no encontrado' }))
+  }
 }
 
 module.exports = updateById
