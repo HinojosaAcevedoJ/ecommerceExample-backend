@@ -9,13 +9,12 @@ const signup = async (req, res) => {
     password: hashed,
     permission: '1'
   })
-  data.save((error, result) => {
-    if (error) {
-      res.status(500).send({ message: error.message })
-    } else {
-      res.send(result)
-    }
-  })
+  const response = await data.save()
+  if (response) {
+    res.send(res.status(200).send({ message: 'Cuenta creada con exito' }))
+  } else {
+    res.send(res.status(500).send({ message: 'Internal Error' }))
+  }
 }
 
 module.exports = signup
