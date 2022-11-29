@@ -23,6 +23,9 @@ mongoose
   .connect(URL_MONGODB, { useNewUrlParser: true })
   .then(() => {
     app.use(cors({origin: FRONT_URL}));
+    app.use(cors({
+      methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+    }));
     app.use('/products', products)
     app.use('/auth', auth)
     app.use('/categories', categories)
