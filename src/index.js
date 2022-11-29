@@ -22,7 +22,7 @@ app.use(bodyParser.json())
 mongoose
   .connect(URL_MONGODB, { useNewUrlParser: true })
   .then(() => {
-    app.use(cors({origin: FRONT_URL}));
+    app.use(cors({origin: '*'}));
     app.use(cors({
       methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
     }));
